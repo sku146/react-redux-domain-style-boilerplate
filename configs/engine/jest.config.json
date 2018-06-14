@@ -1,0 +1,47 @@
+{
+  "rootDir": "../../",
+  "roots": ["<rootDir>/", "<rootDir>/specs/"],
+  "verbose": true,
+  "collectCoverage": true,
+  "coverageDirectory": "<rootDir>/dashboard/unit-testing",
+  "coverageReporters": ["json", "lcov", "text", "text-summary"],
+  "collectCoverageFrom": [
+    "src/**",
+    "!src/index.jsx",
+    "!src/app.root.jsx",
+    "!src/reducer.root.js"
+  ],
+  "coveragePathIgnorePatterns": [
+    "/dist/",
+    "/dist-release/",
+    "src/store/",
+    "src/routes/",
+    "__snapshots__"
+  ],
+  "coverageThreshold": {
+    "global": {
+      "branches": 100,
+      "functions": 100,
+      "lines": 100,
+      "statements": 100
+    }
+  },
+  "globals": {
+    "testUtils": true,
+    "webpack": {
+      "title": "Online Mortgage Switch | Nationwide",
+      "brandName": "",
+      "basePath": "/",
+      "brandHome": "https://localhost:9001/",
+      "brandPrivacy": "https://localhost:9001/"
+    }
+  },
+  "moduleFileExtensions": ["js", "jsx"],
+  "setupFiles": ["<rootDir>/specs/setup.js"],
+  "moduleNameMapper": {
+    "\\.(css|less)$": "<rootDir>/specs/__mocks__/fileTransform.js",
+    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
+      "<rootDir>/specs/__mocks__/resourceMock.js"
+  },
+  "snapshotSerializers": ["<rootDir>/node_modules/enzyme-to-json/serializer"]
+}

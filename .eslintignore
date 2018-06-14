@@ -1,0 +1,14 @@
+/build/**
+/coverage/**
+/docs/**
+/jsdoc/**
+/tmp/**
+/dist/**
+/dist-release/**
+dist/**
+gulpfile.js
+tests/**
+utag.js
+postcss.config.js
+mock.server.js
+src/analytics/analytics.js

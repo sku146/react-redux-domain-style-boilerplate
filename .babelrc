@@ -1,0 +1,23 @@
+{
+  "presets": ["sxt-engine/reactWebpack"],
+  "env": {
+    "compile": {
+      "presets": ["sxt-engine"]
+    },
+    "development": {
+      "plugins": ["react-hot-loader/babel"]
+    },
+    "test": {
+      "presets": ["sxt-engine/react"]
+    }
+  },
+  "plugins": [
+    ["module-resolver", {
+      "root": ["./src"],
+      "alias": {
+        "^app(.*)$": "<rootDir>/src/app$1",
+      }
+    }]
+  ]
+}
+

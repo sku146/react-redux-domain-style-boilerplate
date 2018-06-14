@@ -1,0 +1,74 @@
+{
+  "name": "react-redux-domain-style-boilerplate",
+  "version": "0.0.1",
+  "description": "Simple React Redux Domain Style Boilerplate Application",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "npm run satisfied --fix",
+    "start": "engine --server",
+    "lint": "engine --lint",
+    "release": "engine --build production",
+    "test:watch": "engine --test watch",
+    "test:watchAll": "engine --test watchAll",
+    "test:unit": "engine --test",
+    "test": "engine -l -r -t",
+    "mock:local": "engine --mockServer",
+    "mock:server": "engine --mockServer",
+    "mock:watch": "engine --mockServer watch",
+    "mock-db:watch": "engine --mockServer watch",
+    "check": "npm-check -u",
+    "satisfied": "satisfied --skip-invalid"
+  },
+  "keywords": [
+    "React",
+    "Redux",
+    "Redux Saga",
+    "Webpack",
+    "Boilerplate",
+    "Application"
+  ],
+  "author": {
+    "name": "SAPIENT",
+    "email": "skumar146@sapient.com"
+  },
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">= 6",
+    "npm": ">= 3"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "history": "^4.7.2",
+    "immutable": "^3.8.2",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-hot-loader": "^4.3.0",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^4.0.8",
+    "redux": "^4.0.0",
+    "redux-actions": "^2.4.0",
+    "redux-form": "^7.3.0",
+    "redux-immutable": "^4.0.0",
+    "redux-logger": "^3.0.6",
+    "reselect": "^3.0.1",
+    "validatorjs": "^3.13.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "^8.6.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.4",
+    "nock": "^9.3.0",
+    "npm-check": "^5.7.1",
+    "npm-run-all": "^4.1.3",
+    "pro-build-engine": "^2.0.0-beta",
+    "react-router-test-context": "^0.1.0",
+    "react-test-renderer": "^16.3.2",
+    "regenerator-runtime": "^0.11.1",
+    "satisfied": "^1.1.2",
+    "webpack-command": "^0.2.1"
+  }
+}

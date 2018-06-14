@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <% const prodEnv = htmlWebpackPlugin.options.props.env === 'production' %>
+    <% const publicPath = htmlWebpackPlugin.files.publicPath %>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <% if (prodEnv) { %>
+    <meta http-equiv="Content-Security-Policy" content="">
+    <% } %>
+
+    <% if (htmlWebpackPlugin.options.props.scoutpath) { %>
+    <base href="<%= `./${htmlWebpackPlugin.options.props.scoutpath}${webpack.hash}/` %>">
+    <% } %>
+
+    <title><%= htmlWebpackPlugin.options.props.title %></title>
+    <link rel="icon" type="image/x-icon" href="<%= publicPath %>icons/favicon.ico" />
+
+    <% if (prodEnv && htmlWebpackPlugin.options.props.security.frameBusting.enabled) { %>
+    <style id="antiClickjack" type="text/css">
+        body { display: none !important; }
+    </style>
+
+    <script type="text/javascript">
+        if (self.location.hostname.toLowerCase() === top.location.hostname.toLowerCase()) {
+            var antiClickjack = document.getElementById("antiClickjack");
+            antiClickjack.parentNode.removeChild(antiClickjack);
+        } else {
+            top.location = self.location;
+        }
+    </script>
+    <% } %>
+
+    <script type="text/javascript">
+        window.initialLoadStart = window.performance ? window.performance.now() : Date.now();
+    </script>
+</head>
+<body>
+<!-- Display a message if JS has been disabled on the browser. -->
+<noscript>
+    If you're seeing this message, that means <strong>JavaScript has been disabled on your browser</strong>,
+    please <strong>enable JS</strong> to make this app work.
+</noscript>
+<div id="root" class="nbs-app"></div>
+</body>
+</html>
